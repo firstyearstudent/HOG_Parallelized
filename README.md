@@ -1,4 +1,4 @@
-# Parallel HOG Feature Extraction Benchmark
+# Parallel HOG 
 
 Dự án này thực hiện và so sánh hiệu năng của thuật toán trích xuất đặc trưng ảnh (HOG - Histogram of Oriented Gradients), cụ thể là bước tính toán Gradient (Sobel), sử dụng các kỹ thuật lập trình song song khác nhau.
 
