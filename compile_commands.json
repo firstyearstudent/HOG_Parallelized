@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/manhquan/Workspace/HOG_Parallelized",
+  "command": "/usr/lib64/ccache/c++  -I/home/manhquan/Workspace/HOG_Parallelized/include -isystem /usr/include/opencv4  -Wall -O3 -fopenmp -std=gnu++14 -fopenmp -o CMakeFiles/hog_cpu_test.dir/src/main.cpp.o -c /home/manhquan/Workspace/HOG_Parallelized/src/main.cpp",
+  "file": "/home/manhquan/Workspace/HOG_Parallelized/src/main.cpp",
+  "output": "CMakeFiles/hog_cpu_test.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/manhquan/Workspace/HOG_Parallelized",
+  "command": "/usr/lib64/ccache/c++  -I/home/manhquan/Workspace/HOG_Parallelized/include -isystem /usr/include/opencv4  -Wall -O3 -fopenmp -std=gnu++14 -fopenmp -o CMakeFiles/hog_cpu_test.dir/src/hog_serial.cpp.o -c /home/manhquan/Workspace/HOG_Parallelized/src/hog_serial.cpp",
+  "file": "/home/manhquan/Workspace/HOG_Parallelized/src/hog_serial.cpp",
+  "output": "CMakeFiles/hog_cpu_test.dir/src/hog_serial.cpp.o"
+},
+{
+  "directory": "/home/manhquan/Workspace/HOG_Parallelized",
+  "command": "/usr/lib64/ccache/c++  -I/home/manhquan/Workspace/HOG_Parallelized/include -isystem /usr/include/opencv4  -Wall -O3 -fopenmp -std=gnu++14 -fopenmp -o CMakeFiles/hog_cpu_test.dir/src/hog_openmp.cpp.o -c /home/manhquan/Workspace/HOG_Parallelized/src/hog_openmp.cpp",
+  "file": "/home/manhquan/Workspace/HOG_Parallelized/src/hog_openmp.cpp",
+  "output": "CMakeFiles/hog_cpu_test.dir/src/hog_openmp.cpp.o"
+},
+{
+  "directory": "/home/manhquan/Workspace/HOG_Parallelized",
+  "command": "/usr/lib64/ccache/c++  -I/home/manhquan/Workspace/HOG_Parallelized/include -isystem /usr/include/opencv4  -Wall -O3 -fopenmp -std=gnu++14 -fopenmp -o CMakeFiles/hog_cpu_test.dir/src/timing.cpp.o -c /home/manhquan/Workspace/HOG_Parallelized/src/timing.cpp",
+  "file": "/home/manhquan/Workspace/HOG_Parallelized/src/timing.cpp",
+  "output": "CMakeFiles/hog_cpu_test.dir/src/timing.cpp.o"
+}
+]

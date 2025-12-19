@@ -1,8 +1,10 @@
 #include "common.h"
 #include "timing.hpp" // Class đo thời gian của project cũ
+#include <algorithm>
 #include <iostream>
 #include <omp.h>
 #include <opencv2/opencv.hpp>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -11,7 +13,7 @@ using namespace cv;
 int main(int argc, char **argv) {
   // 1. Load ảnh (nhập đường dẫn ảnh từ dòng lệnh hoặc mặc định)
   string imagePath =
-      (argc > 1) ? argv[1] : "2025_Moscow_Victory_Day_Parade_55.jpg";
+      (argc > 1) ? argv[1] : "../images/2025_Moscow_Victory_Day_Parade_55.jpg";
   Mat src = imread(imagePath, IMREAD_GRAYSCALE);
 
   if (src.empty()) {

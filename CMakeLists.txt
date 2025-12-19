@@ -1,25 +1,39 @@
-cmake_minimum_required(VERSION 2.8)
-PROJECT (name)
+cmake_minimum_required(VERSION 3.10)
+project(HogParallelProject)
 
-find_package(OpenCV REQUIRED )
+# 1. Tự động tạo file compile_commands.json cho clangd (Fix lỗi đỏ Neovim)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_CXX_FLAGS "--std=c++11 -Werror")
+# 2. Cấu hình C++14 và các cờ tối ưu
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O3 -fopenmp")
 
-set( NAME_SRC
-    src/hogCpu.cpp
+# 3. Tìm các thư viện cần thiết
+find_package(OpenCV REQUIRED)
+find_package(OpenMP REQUIRED)
+
+# 4. Khai báo đường dẫn file Header (.h)
+include_directories(include)
+
+# 5. Danh sách các file nguồn
+# Đảm bảo tên file khớp với trong folder src/
+set(PROJECT_SOURCES
+    src/main.cpp
+    src/hog_serial.cpp
+    src/hog_openmp.cpp
+    src/timing.cpp
 )
 
-#set( NAME_HEADERS
-#     include/timing.hpp
-#)
+# 6. Tạo file thực thi
+add_executable(hog_cpu_test ${PROJECT_SOURCES})
 
-find_package(CUDA)
-    if(CUDA_FOUND)
-    add_library(timing src/timing.cpp)
-    add_executable(GpuCpuTest src/hogGpu.cpp)
-    target_link_libraries(GpuCpuTest ${OpenCV_LIBS} timing)
-endif(CUDA_FOUND)
+# 7. Liên kết thư viện (Link Libraries)
+# --- SỬA LỖI TẠI ĐÂY ---
 
+# Link OpenMP (nếu tìm thấy)
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(hog_cpu_test PUBLIC OpenMP::OpenMP_CXX)
+endif()
 
-add_executable( cpuRun ${NAME_SRC} ${NAME_HEADERS} )
-target_link_libraries(cpuRun ${OpenCV_LIBS} )
+# Link OpenCV (Thêm từ khóa PUBLIC để đồng bộ)
+target_link_libraries(hog_cpu_test PUBLIC ${OpenCV_LIBS})

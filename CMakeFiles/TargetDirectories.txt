@@ -1,0 +1,3 @@
+/home/manhquan/Workspace/HOG_Parallelized/CMakeFiles/hog_cpu_test.dir
+/home/manhquan/Workspace/HOG_Parallelized/CMakeFiles/edit_cache.dir
+/home/manhquan/Workspace/HOG_Parallelized/CMakeFiles/rebuild_cache.dir
